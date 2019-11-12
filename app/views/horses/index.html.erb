@@ -1,13 +1,13 @@
-<h1>Horses</h1>
+<h3>Horses</h3>
 <div class="container">
   <div class="row">
-<%= link_to "Add a horse", url: new_admin_horse_path, class: "btn btn-primary btn-lg" %>
-<%= link_to "My horses", url: admin_horses_path, class: "btn btn-primary btn-lg" %>
+<%= link_to "Add a horse", new_admin_horse_path, class: "btn btn-primary btn-lg" %>
+<%= link_to "My horses", admin_horses_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
 
 <% @horses.each do |horse| %>
-  <h2><%= link_to horse.name, horse_path(horse) %></h2>
+  <p><%= link_to horse.name, horse_path(horse) %></p>
   <% end %>
 
 
