@@ -9,6 +9,7 @@
 
 <% @horses.each do |horse| %>
   <p><%= link_to horse.name, horse_path(horse) %></p>
+  <%= cl_image_tag horse.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
 
 
