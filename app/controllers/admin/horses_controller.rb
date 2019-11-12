@@ -1,4 +1,4 @@
-class Admin::RestaurantsController < ApplicationController
+class Admin::HorsesController < ApplicationController
   def index
     # Let's anticipate on next week (with login)
     @horses = current_user.horses
