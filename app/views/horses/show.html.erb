@@ -1,0 +1,12 @@
+<h1>Horse's name: <%= @horse.name %></h1>
+
+<div class="container">
+  <div class="row"><p>Breed: <%= @horse.breed %></p></div>
+  <div class="row"><p>Price per hour:<%= @horse.price %></p></div>
+  <div class="row"><p>Level: <%= @horse.level %></p></div>
+  <div class="row"><p>Description:<%= @horse.description %></p></div>
+</div>
+
+
+
+  <%= link_to "Back to Horses", horses_path, class: "btn btn-primary btn-lg" %>
