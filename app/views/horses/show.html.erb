@@ -3,13 +3,14 @@
 
 
 <div class="container">
-  <div><%= cl_image_tag @horse.photo, height: 300, width: 400, crop: :fill %></div>
+  <div class="row"><p>Photo: sorry, cloudinary photo temporarily deleted; it caused an error</p></div>
+  <div class="row"><p>Name: <%= @horse.name %></p></div>
   <div class="row"><p>Breed: <%= @horse.breed %></p></div>
-  <div class="row"><p>Price per hour:<%= @horse.price %></p></div>
   <div class="row"><p>Level: <%= @horse.level %></p></div>
-  <div class="row"><p>Description:<%= @horse.description %></p></div>
+  <div class="row"><p>Description: <%= @horse.description %></p></div>
+  <div class="row"><p>Price per hour: EUR <%= @horse.price %></p></div>
+  <div class="row"><p>Address: <%= @horse.address %></p></div>
+
 </div>
-
-
 
   <%= link_to "Back to Horses", horses_path, class: "btn btn-primary btn-lg" %>
