@@ -1,0 +1,45 @@
+// Show Horse per id
+.container-horse {
+  display: flex;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+}
+
+.card-horse-show {
+  flex-direction: row;
+  background-color: white;
+  align-content: center;
+  margin: auto;
+  text-align: left;
+  width: 100% !important;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#something {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-horse-show img {
+  height: 100%;
+  width: 250px;
+  object-fit: cover;
+}
+
+.card-horse-show h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card-horse-show p {
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: .8;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+
