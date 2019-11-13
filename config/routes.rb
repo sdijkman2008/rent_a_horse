@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :horses, only: [:index, :show]
     end
 
-    resources :horses, only: [:index, :show, :new, :create] do
+    resources :horses, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       resources :reservations, only: [:new, :create]
     end
 

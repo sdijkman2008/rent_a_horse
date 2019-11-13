@@ -1,32 +1,38 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-left">
     <div class="col-12 col-lg-6">
-<h2>Sign up</h2>
+      <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+        <body class="bg">
+          <div class="form-layout">
+          <h2>Sign up</h2>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-  <button class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </button>
-<% end %>
+          <div class="form-inputs">
+            <%= f.input :email,
+            required: true,
+            autofocus: true,
+            input_html: { autocomplete: "email" }%>
+            <%= f.input :password,
+            required: true,
+            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+            input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+            required: true,
+            input_html: { autocomplete: "new-password" } %>
+          </div>
 
-<%= render "devise/shared/links" %>
+          <button class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </button>
+          <% end %>
 
+          <%= render "devise/shared/links" %>
+          </div>
+        </body>
+      </section>
     </div>
   </div>
 </div>

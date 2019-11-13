@@ -1,4 +1,21 @@
 <h3>Horses</h3>
+
+<% @horses.each do |horse| %>
+  <p>-----------------------------------------------------</p>
+  <p><%= link_to horse.name, horse_path(horse) %>, Owner: <%= horse.user.email %>, photo.</p>
+
+  <% if policy(horse).edit? %>
+  <%= link_to 'Edit', edit_horse_path(horse) %>
+  <% end %>
+
+  <% if policy(horse).destroy? %>
+  <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
+
+  <% end %>
+
+<div class="container">
   <div class="row">
     <div class="text-center">
       <%= link_to "Add a horse", new_horse_path, class: "btn btn-primary btn-lg" %>
@@ -19,5 +36,6 @@
     </div>
   <% end %>
 </div>
+
 
 
