@@ -21,5 +21,21 @@
       <%= link_to "Add a horse", new_horse_path, class: "btn btn-primary btn-lg" %>
     </div>
   </div>
+
+<div class="container">
+    <% @horses.each do |horse| %>
+    <div class="card-horse-main">
+      <img class="card-horse-image" <%= cl_image_tag horse.photo %>>
+      <div class="card-horse-footer">
+        <div>
+          <p><%= link_to horse.name, horse_path(horse) %></p>
+          <p>Level: <%= horse.level %></p>
+        </div>
+        <p>EUR <%= horse.price %></p>
+      </div>
+    </div>
+  <% end %>
 </div>
+
+
 
