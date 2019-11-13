@@ -1,13 +1,12 @@
 class HorsesController < ApplicationController
-  before_action :set_horse, only: [:show]
+  before_action :set_horse, only: [:show, :edit, :update, :destroy]
 
   def index
     @horses = Horse.all
-    @restaurants = policy_scope(Horse).order(:name)
+    policy_scope(Horse).order(:name)
   end
 
   def show
-    @horse = Horse.find(params[:id])
   end
 
   # GET
@@ -30,22 +29,21 @@ class HorsesController < ApplicationController
 
   # GET /horses/:id/edit
   def edit
-    @horse = Horse.find(params[:id])
     authorize @horse
   end
 
   # PATCH /horses/:id
   def update
-    @horse = Horse.find(params[:id])
-    @horse.update(horse_params)
-    authorize @horse
+    if @horse.update(horse_params)
+      redirect_to @horse
+    else
+      render :edit
+    end
   end
 
   # DELETE /horses/:id
   def destroy
-    @horse = Horse.find(horse_params[:id])
     @horse.destroy
-    authorize @horse
     redirect_to horses_path
   end
 
