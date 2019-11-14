@@ -1,3 +1,19 @@
+<h3>Horses</h3>
+<!-- I made this page work on my end, so I can make the geocoding and map
+I backupped the original version in index.html.erb_original -->
+
+
+
+
+  <% if policy(horse).edit? %>
+  <%= link_to 'Edit', edit_horse_path(horse) %>
+  <% end %>
+
+  <% if policy(horse).destroy? %>
+  <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
+  <% end %>
 
 
 <div class="col-container">
@@ -43,4 +59,3 @@
 </div>
 
 
-<!--  -->

@@ -2,8 +2,16 @@ class HorsesController < ApplicationController
   before_action :set_horse, only: [:show, :edit, :update, :destroy]
 
   def index
-    @horses = Horse.all
+    @horses = Horse.geocoded
     policy_scope(Horse).order(:name)
+    @markers = @horses.map do |horse|
+      {
+        lat: horse.latitude,
+        lng: horse.longitude,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { horse: horse }),
+        image_url: helpers.asset_url('Horse-marker.png')
+      }
+    end
   end
 
   def show
