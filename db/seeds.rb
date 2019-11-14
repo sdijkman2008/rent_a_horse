@@ -54,9 +54,14 @@ User.create(
       address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
       price: Faker::Number.within(range: 20..60),
       user: user,
-      level: rand(0..5)
+      level: rand(0..5),
+      description: "description",
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
       )
     horse.save!
     # puts horse_pic[count]
   end
   puts 'Finished!'
+
+
