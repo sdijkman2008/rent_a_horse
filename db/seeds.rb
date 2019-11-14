@@ -43,7 +43,6 @@ User.create(
     "https://res.cloudinary.com/dxxmzjamn/image/upload/v1573563210/horses/horse/horse9_igrcxk.png"
   ]
 
-
   puts 'Creating 10 fake horses...'
   10.times do |index|
     user = User.all.sample

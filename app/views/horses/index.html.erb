@@ -6,9 +6,9 @@
     </div>
   </div>
 
-<div class="container">
-  <div class="row">
-    <% @horses.each do |horse| %>
+  <div class="container">
+    <div class="row">
+      <% @horses.each do |horse| %>
       <div class="col-3">
         <div class="card-deck">
           <a href="<%= horse_path(horse) %>">
@@ -21,14 +21,14 @@
                       <p class="card-title"><%= horse.name %></p>
                       <p class="card-text"><small class="text-muted">Level: <%= horse.level %></small></p>
                     </div>
-                      <p><% if policy(horse).edit? %>
-                          <%= link_to 'Edit | ', edit_horse_path(horse) %>
-                          <% end %>
-                          <% if policy(horse).destroy? %>
-                          <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
-                        <% end %>
-                      </p>
-                      <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
+                    <p><% if policy(horse).edit? %>
+                      <%= link_to 'Edit | ', edit_horse_path(horse) %>
+                      <% end %>
+                      <% if policy(horse).destroy? %>
+                      <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <% end %>
+                    </p>
+                    <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
                   </div>
                 </div>
               </div>
@@ -36,7 +36,8 @@
           </a>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 

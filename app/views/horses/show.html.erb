@@ -1,34 +1,67 @@
+<div class="container-horse">
+  <div class="card-horse-show">
+    <div id="something">
 
-
-  <div class="container-horse">
-    <div class="card-horse-show">
-      <div id="something">
-
-        <div id="pic">
-          <%= cl_image_tag @horse.photo, height: 250, width: 220, crop: :limit, class: 'card-img-bottom' %>
-        </div>
-
-        <div id="text">
-          <h3 class="font-weight-bold my-4 pb-2 text-center dark-grey-text">Horse's name: <%= @horse.name %></h3>
-          <p>Name: <%= @horse.name %></p>
-          <p>Breed: <%= @horse.breed %></p>
-          <p>Level: <%= @horse.level %></p>
-          <p>Address: <%= @horse.address %></p>
-          <p>Description: <%= @horse.description %></p>
-          <p>Price per hour: EUR <%= @horse.price %></p>
-        </div>
-
-
-          <div>
-            <%= link_to "Back to Horses", horses_path, class: "btn btn-primary btn-lg text-center btn-rounded my-4 waves-effect" %>
-          </div>
-
+      <div id="pic">
+        <%= cl_image_tag @horse.photo, height: 400, width: 300, crop: :limit, class: 'card-img-bottom' %>
       </div>
 
+      <div id="text">
+        <h3 class="font-weight-bold my-4 pb-2 text-center dark-grey-text">Horse's name: <%= @horse.name %></h3>
+        <p>Name: <%= @horse.name %></p>
+        <p>Breed: <%= @horse.breed %></p>
+        <p>Level: <%= @horse.level %></p>
+        <p>Address: <%= @horse.address %></p>
+        <p>Description: <%= @horse.description %></p>
+        <p>Price per hour: EUR <%= @horse.price %></p>
+      </div>
+
+
+      <div>
+        <%= link_to "Back to Horses", horses_path, class: "btn btn-primary btn-lg text-center btn-rounded my-4 waves-effect" %>
+      </div>
     </div>
   </div>
-  <!-- </body> -->
-<!-- </html> -->
+</div>
 
-
-  <!-- <div class="row"> -->
+<div class="section-center">
+  <div class="container">
+    <div class="row">
+      <div class="booking-form">
+        <form>
+          <div class="row no-margin">
+            <div class="col-md-2">
+              <div class="form-group">
+                <input class="form-control" type="date" required>
+                <span class="form-label">Select date</span>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <span class="form-label">Timeslot</span>
+                <select class="form-control">
+                  <option>9-11AM</option>
+                  <option>12-15PM</option>
+                  <option>16-18PM</option>
+                </select>
+                <span class="select-arrow">
+                </span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text">
+                <span class="form-label">Additional comment</span>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-btn">
+                <button class="btn btn-primary">Book now</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
