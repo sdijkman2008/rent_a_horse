@@ -2,5 +2,22 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-@import "card-horse-main";
-@import "container";
+@import "card-deck";
+@import "devise-form-container";
+
+
+// .col-container {
+//     display: table; /* Make the container element behave like a table */
+//     width: 100%; /* Set full-width to expand the whole page */
+// }
+
+// .col-3 {
+//     display: table-cell; /* Make elements inside the container behave like table cells */
+// }
+
+// @media only screen and (max-width: 600px) {
+//   .col {
+//     display: block;
+//     width: 100%;
+//   }
+// }

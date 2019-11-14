@@ -20,7 +20,6 @@
 
 body, html {
   height: 100%;
-  padding: 2px;
 }
 
 .bg {
@@ -31,14 +30,41 @@ body, html {
   height: 100%;
   background-position: center;
   background-size: cover;
+
   h1, p {
   color: white;
   font-weight: bold;
   }
+
+
+  ul.list-inline {
+  padding-left: 0;
+  list-style: none;
+   position: absolute;
+    bottom: 1%;
+    left: 50%;
+  }
+
+  li {
+    display: inline-block;
+    padding: 5px;
+  }
+
+  i {
+  color: white;
+  width: 30px;
+  height: 30px;
+  }
+
+  a:hover {
+  color: black;
+  }
+
+
 }
 
 
 h1, p {
   color: #fdffc;
-  font-weight: bold;
 }
+

@@ -2,9 +2,8 @@
 <!-- I made this page work on my end, so I can make the geocoding and map
 I backupped the original version in index.html.erb_original -->
 
-<% @horses.each do |horse| %>
-  <p>-----------------------------------------------------</p>
-  <p><%= link_to horse.name, horse_path(horse) %>, Owner: <%= horse.user.email %>, photo.</p>
+
+
 
   <% if policy(horse).edit? %>
   <%= link_to 'Edit', edit_horse_path(horse) %>
@@ -16,11 +15,47 @@ I backupped the original version in index.html.erb_original -->
 
   <% end %>
 
-<!-- CvT: this is my Mapbox code! -->
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+<div class="col-container">
+  <div class="row justify-content-center" style="margin-bottom: 15px">
+    <h3 style="padding-right: 2.0rem">Horses</h3>
+    <div class="text-center">
+      <%= link_to "Add a horse", new_horse_path, class: "btn btn-primary btn-lg" %>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <% @horses.each do |horse| %>
+      <div class="col-3">
+        <div class="card-deck">
+          <a href="<%= horse_path(horse) %>">
+            <div class= "card" %>
+              <%= cl_image_tag horse.photo, height: 250, width: 220, crop: :fill, class: 'card-img-bottom' %>
+              <div class="card-body" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
+                <div class="card-text">
+                  <div class="row" style="justify-content:space-between">
+                    <div>
+                      <p class="card-title"><%= horse.name %></p>
+                      <p class="card-text"><small class="text-muted">Level: <%= horse.level %></small></p>
+                    </div>
+                      <p><% if policy(horse).edit? %>
+                          <%= link_to 'Edit | ', edit_horse_path(horse) %>
+                          <% end %>
+                          <% if policy(horse).destroy? %>
+                          <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
+                        <% end %>
+                      </p>
+                      <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+
