@@ -1,19 +1,6 @@
-<h3>Horses</h3>
+
 <!-- I made this page work on my end, so I can make the geocoding and map
-I backupped the original version in index.html.erb_original -->
-
-
-
-
-  <% if policy(horse).edit? %>
-  <%= link_to 'Edit', edit_horse_path(horse) %>
-  <% end %>
-
-  <% if policy(horse).destroy? %>
-  <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-
-  <% end %>
+  I backupped the original version in index.html.erb_original -->
 
 
 <div class="col-container">
@@ -24,9 +11,9 @@ I backupped the original version in index.html.erb_original -->
     </div>
   </div>
 
-<div class="container">
-  <div class="row">
-    <% @horses.each do |horse| %>
+  <div class="container">
+    <div class="row">
+      <% @horses.each do |horse| %>
       <div class="col-3">
         <div class="card-deck">
           <a href="<%= horse_path(horse) %>">
@@ -39,14 +26,14 @@ I backupped the original version in index.html.erb_original -->
                       <p class="card-title"><%= horse.name %></p>
                       <p class="card-text"><small class="text-muted">Level: <%= horse.level %></small></p>
                     </div>
-                      <p><% if policy(horse).edit? %>
-                          <%= link_to 'Edit | ', edit_horse_path(horse) %>
-                          <% end %>
-                          <% if policy(horse).destroy? %>
-                          <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
-                        <% end %>
-                      </p>
-                      <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
+                    <p><% if policy(horse).edit? %>
+                      <%= link_to 'Edit | ', edit_horse_path(horse) %>
+                      <% end %>
+                      <% if policy(horse).destroy? %>
+                      <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <% end %>
+                    </p>
+                    <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
                   </div>
                 </div>
               </div>
@@ -54,7 +41,8 @@ I backupped the original version in index.html.erb_original -->
           </a>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
