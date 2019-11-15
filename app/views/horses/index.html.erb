@@ -1,12 +1,11 @@
 <div class="big-container-index">
-  <!-- <img src="background.jpg"> -->
   <div class="col-container">
 
     <%= form_tag horses_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control string required",
+    <div class="search-form-control form-group">
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control string required",
         type: "text",
         placeholder: "Find a horse"
         %>
@@ -18,7 +17,7 @@
         <!-- <h3 style="padding-right: 2.0rem">Horses</h3> -->
       </div>
       <div class="text-center" style="padding-right: 2.4rem">
-        <%= link_to "Add a horse", new_horse_path, class: "btn btn-flat btn-lg btn-index" %>
+        <%= link_to "Add a horse", new_horse_path, class: "btn btn-index btn-light btn-lg " %>
       </div>
     </div>
   </div>
@@ -49,11 +48,12 @@
                   </div>
                 </div>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        <% end %>
       </div>
+      <% end %>
     </div>
+  </div>
 </div>
 
