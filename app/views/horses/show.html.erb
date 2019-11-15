@@ -46,12 +46,12 @@
                 </div>
                 <div class="col-md-1">
                   <div class="form-group">
-                    <span><%= f.input :timeslot, as: :select, collection: [['9-11AM'], ['13-15PM'], ['16-18PM']] %></span>
+                    <span><%= f.input :timeslot, as: :select, collection: ['9-11AM', '13-15PM', '16-18PM'] %></span>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <span><%= f.input :status, as: :select, collection: [['book'], ['cancel']] %></span>
+                    <span><%= f.input :status, as: :select, collection: ['booked', 'cancel'] %></span>
                   </div>
                 </div>
                 <div class="col-md-1">
