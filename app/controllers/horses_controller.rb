@@ -23,6 +23,7 @@ class HorsesController < ApplicationController
   def show
     @reservation = Reservation.new
     @horse = Horse.find(params[:id])
+    @reservation.horse = @horse
     # policy_scope(Horse).order(:name)
     @markers = [
       {

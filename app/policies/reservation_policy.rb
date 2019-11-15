@@ -6,6 +6,6 @@ class ReservationPolicy < ApplicationPolicy
   end
 
   def create?
-    record.horse.user == user
+    record.horse.user != user
   end
 end

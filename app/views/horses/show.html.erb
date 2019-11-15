@@ -32,7 +32,9 @@
   </div>
 </div>
 
-
+<% unless policy(@reservation).create? %>
+<%= "These are the bookings on your horse" unless @horse.reservations.empty? %>
+<% else %>
     <div class="row">
       <div class="booking-form">
         <%= simple_form_for [@horse, @reservation] do |f| %>
@@ -49,7 +51,7 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <span><%= f.input :status,  default: 'available' %></span>
+                    <span><%= f.input :status, as: :select, collection: [['book'], ['cancel']] %></span>
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -62,6 +64,7 @@
         <% end %>
       </div>
     </div>
+<% end %>
     <div class="container">
       <% @horse.reservations.each do |reservation| %>
         <div class="row">

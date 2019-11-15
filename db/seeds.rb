@@ -51,7 +51,7 @@ puts 'Creating 3 fake horses for Daphnee...'
       address: nladres.pop,
       price: Faker::Number.within(range: 20..60),
       user: user,
-      level: rand(0..5),
+      level: rand(1..5),
       description: "description",
       # latitude: rand(51.0000..53.20000),
       # longitude: rand(4.000..7.000)
