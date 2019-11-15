@@ -3,10 +3,10 @@
   <div class="col-container">
 
     <%= form_tag horses_path, method: :get do |f| %>
-    <div class="search-form-control form-group">
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control string required",
+      <div class="search-form-control form-group">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control string required",
         type: "text",
         placeholder: "Find a horse"
         %>
@@ -14,44 +14,38 @@
         <% end %>
       </div>
 
-
-
-
-
       <div class="title-horses">
         <!-- <h3 style="padding-right: 2.0rem">Horses</h3> -->
       </div>
       <div class="text-center" style="padding-right: 2.4rem">
         <%= link_to "Add a horse", new_horse_path, class: "btn btn-flat btn-lg btn-index" %>
       </div>
-
     </div>
+  </div>
 
-    <div class="container">
-      <div class="row">
-        <% @horses.each do |horse| %>
-        <div class="col-3">
-          <div class="card-deck">
-            <a href="<%= horse_path(horse) %>">
-              <div class= "card" %>
-                <%= cl_image_tag horse.photo, height: 250, width: 220, crop: :fill, class: 'card-img-bottom' %>
-                <div class="card-body" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
-                  <div class="card-text">
-                    <div class="row" style="justify-content:space-between">
-                      <div>
-                        <p class="card-title"><%= horse.name %></p>
-                        <p class="card-text"><small class="text-muted">Level: <%= horse.level %></small></p>
-                      </div>
-                      <p>
-                        <% if policy(horse).edit? %>
-                        <%= link_to 'Edit | ', edit_horse_path(horse) %>
-                        <% end %>
-                        <% if policy(horse).destroy? %>
-                        <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
-                        <% end %>
-                      </p>
-                      <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
+  <div class="container">
+    <div class="row">
+      <% @horses.each do |horse| %>
+      <div class="col-3">
+        <div class="card-deck">
+          <a href="<%= horse_path(horse) %>">
+            <div class= "card" %>
+              <%= cl_image_tag horse.photo, height: 250, width: 220, crop: :fill, class: 'card-img-bottom' %>
+              <div class="card-body" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
+                <div class="card-text">
+                  <div class="row" style="justify-content:space-between">
+                    <div>
+                      <p class="card-title"><%= horse.name %></p>
+                      <p class="card-text"><small class="text-muted">Level: <%= horse.level %></small></p>
                     </div>
+                    <p><% if policy(horse).edit? %>
+                      <%= link_to 'Edit | ', edit_horse_path(horse) %>
+                      <% end %>
+                      <% if policy(horse).destroy? %>
+                      <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <% end %>
+                    </p>
+                    <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
                   </div>
                 </div>
               </div>
