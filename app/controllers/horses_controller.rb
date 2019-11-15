@@ -8,8 +8,8 @@ class HorsesController < ApplicationController
       {
         lat: horse.latitude,
         lng: horse.longitude,
-        # infoWindow: render_to_string(partial: "infowindow", locals: { horse: horse }),
-        image_url: helpers.asset_url('Horse-marker.png')
+        infoWindow: render_to_string(partial: "info_window", locals: { horse: horse }),
+        image_url: helpers.asset_url('Horse-marker.png') # MARKERS ARE NOT LOADED
       }
     if params[:query].present?
       sql_query = "address ILIKE :query"
@@ -18,8 +18,19 @@ class HorsesController < ApplicationController
     end
   end
 
+  # fix to only show THIS horse
   def show
     @reservation = Reservation.new
+    @horse = Horse.find(params[:id])
+    # policy_scope(Horse).order(:name)
+    @markers = [
+      {
+        lat: @horse.latitude,
+        lng: @horse.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { horse: @horse }),
+        image_url: helpers.asset_url('Horse-marker.png') # MARKERS ARE NOT LOADED
+      }
+    ]
   end
 
   # GET

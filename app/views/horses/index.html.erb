@@ -10,8 +10,8 @@
         placeholder: "Find a horse"
         %>
         <%= submit_tag "Search", class: "btn btn-light" %>
-        <% end %>
       </div>
+    <% end %>
 
       <div class="title-horses">
         <!-- <h3 style="padding-right: 2.0rem">Horses</h3> -->
@@ -20,7 +20,6 @@
         <%= link_to "Add a horse", new_horse_path, class: "btn btn-index btn-light btn-lg " %>
       </div>
     </div>
-  </div>
 
   <div class="container">
     <div class="row">
@@ -55,5 +54,20 @@
       <% end %>
     </div>
   </div>
+</div>
+
+<!-- CvT: this is my Mapbox code! MARKERS ARE NOT LOADED :-( -->
+<div class="container-horse">
+  <div
+  id="map"
+  style="width: 100%;
+  height: 300px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+</div>
+
+<div class="container-horse">
+  <p></p>
 </div>
 

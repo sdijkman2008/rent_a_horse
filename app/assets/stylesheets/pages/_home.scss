@@ -7,6 +7,7 @@
   background: linear-gradient(to bottom,  #c9de96 0%,#8ab66b 44%,#398235 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#398235',GradientType=0 ); /* IE6-9 */
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .form-actions:hover {
@@ -41,3 +42,12 @@ h1, p {
   color: #fdffc;
 }
 
+.devise-form-container {
+  background-color: rgba(0,0,0,.4);
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 100px;
+  border-radius: 10px;
+  width: 500px;
+  // justify-content: center;
+}
