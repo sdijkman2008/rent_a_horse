@@ -11,7 +11,7 @@
         %>
         <%= submit_tag "Search", class: "btn btn-light" %>
       </div>
-    <% end %>
+      <% end %>
 
       <div class="title-horses">
         <!-- <h3 style="padding-right: 2.0rem">Horses</h3> -->
@@ -21,53 +21,60 @@
       </div>
     </div>
 
-  <div class="container">
-    <div class="row">
-      <% @horses.each do |horse| %>
-      <div class="col-3">
-        <div class="card-deck">
-          <a href="<%= horse_path(horse) %>">
-            <div class= "card" %>
-              <%= cl_image_tag horse.photo, height: 250, width: 220, crop: :fill, class: 'card-img-bottom' %>
-              <div class="card-body" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
-                <div class="card-text">
-                  <div class="row" style="justify-content:space-between">
-                    <div>
-                      <p class="card-title"><%= horse.name %></p>
-                      <p class="card-text"><small class="text-muted">Level: <%= horse.level %></small></p>
+    <div class="container">
+      <div class="row">
+        <% @horses.each do |horse| %>
+        <div class="col-3">
+          <div class="card-deck">
+            <a href="<%= horse_path(horse) %>">
+              <div class= "card" %>
+                <%= cl_image_tag horse.photo, height: 250, width: 220, crop: :fill, class: 'card-img-bottom' %>
+                <div class="card-body" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
+                  <div class="card-text">
+                    <div class="row" style="justify-content:space-between">
+                      <div>
+                        <p class="card-title"><%= horse.name %></p>
+                        <p class="card-text"><small class="text-muted">Level: <%= horse.level %></small></p>
+                      </div>
+                      <p><small class="text-muted"><% if policy(horse).edit? %>
+                        <%= link_to 'Edit | ', edit_horse_path(horse) %>
+                        <% end %>
+                        <% if policy(horse).destroy? %>
+                        <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
+                        <% end %>
+                      </small></p>
+                      <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
                     </div>
-                    <p><% if policy(horse).edit? %>
-                      <%= link_to 'Edit | ', edit_horse_path(horse) %>
-                      <% end %>
-                      <% if policy(horse).destroy? %>
-                      <%= link_to 'Delete', horse, method: :delete, data: { confirm: 'Are you sure?' } %>
-                      <% end %>
-                    </p>
-                    <p class="card-text"><small class="text-muted">EUR <%= horse.price %></small></p>
                   </div>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div>
+        <!-- CvT: this is my Mapbox code! CUSTOM MARKERS ARE NOT LOADED :-( -->
+        <div class="container-horse">
+          <div
+          id="map"
+          style="width: 100%;
+          height: 500px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+        <div class="container-horse">
+          <br><br>
         </div>
       </div>
-      <% end %>
     </div>
+
+
+
+
   </div>
-</div>
 
-<!-- CvT: this is my Mapbox code! MARKERS ARE NOT LOADED :-( -->
-<div class="container-horse">
-  <div
-  id="map"
-  style="width: 100%;
-  height: 300px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-</div>
-
-<div class="container-horse">
-  <p></p>
-</div>
+  <div class="container-horse">
+    <br><br>
+  </div>
 

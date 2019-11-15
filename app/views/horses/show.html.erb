@@ -1,6 +1,8 @@
 
 <body id="bg-showpage">
-  <div id="container-horse">
+  <div class="section-center">
+  <div class="container">
+  <div id="container-horse" class="row">
     <div class="card-horse-show">
       <div id="something">
 
@@ -8,26 +10,29 @@
           <%= cl_image_tag @horse.photo, height: 250, width: 220, crop: :limit, class: 'card-img-bottom' %>
         </div>
 
-      <div id="text">
-        <h3 class="font-weight-bold my-4 pb-2 text-center dark-grey-text">Horse's name: <%= @horse.name %></h3>
-        <p>Name: <%= @horse.name %></p>
-        <p>Breed: <%= @horse.breed %></p>
-        <p>Level: <%= @horse.level %></p>
-        <p>Address: <%= @horse.address %></p>
-        <p>Description: <%= @horse.description %></p>
-        <p>Price per hour: EUR <%= @horse.price %></p>
-      </div>
+        <div id="text">
+          <h3 class="font-weight-bold my-4 pb-2 dark-grey-text"><%= @horse.name %></h3>
+          <!-- name deleted, was double -->
+          <p>Breed: <%= @horse.breed %></p>
+          <p>Difficulty level: <%= @horse.level %></p>
+          <p>Address: <%= @horse.address %></p>
+          <p>Description: <%= @horse.description %></p>
+          <p>Price per hour: EUR <%= @horse.price %></p>
+          <%= link_to "Back to Horses", horses_path, class: "btn btn-light btn-lg text-center btn-rounded my-4" %>
+        </div>
 
 
-      <div>
-        <%= link_to "Back to Horses", horses_path, class: "btn btn-light btn-lg text-center btn-rounded my-4" %>
+
+        <div id="map" style="width: 100%; height: 400px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+
     </div>
   </div>
 </div>
 
-<div class="section-center">
-  <div class="container">
+
     <div class="row">
       <div class="booking-form">
         <form>
@@ -65,17 +70,6 @@
         </form>
       </div>
     </div>
-  </div>
-</div>
-  
-  <!-- CvT: this is my Mapbox code! -->
-<div class="container-horse">
-  <div
-    id="map"
-    style="width: 100%;
-    height: 300px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
