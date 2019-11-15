@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+puts 'Dropping old data...'
+
+Reservation.destroy_all
+Horse.destroy_all
+User.destroy_all
+
+puts 'Finished!'
+
 User.create(
   first_name: 'Daphnee',
   last_name: 'Kbidi',
@@ -56,12 +64,33 @@ User.create(
       user: user,
       level: rand(0..5),
       description: "description",
-      latitude: Faker::Address.latitude,
-      longitude: Faker::Address.longitude
+      # latitude: Faker::Address.latitude,
+      # longitude: Faker::Address.longitude
+      latitude: rand(51.0000..53.20000),
+      longitude: rand(4.000..7.000)
       )
     horse.save!
-    # puts horse_pic[count]
+    # can we put latitude.within(range: 51..53,2) and longitude.within(range: 4..7)
   end
   puts 'Finished!'
 
+  reservation_status = ["available", "booked"]
+  timeslot = ["9-11am", "13-15am", "16-18am"]
+
+  puts 'Creating 10 fake reservations'
+  25.times do |index|
+    horse = Horse.all.sample
+    user = User.all.sample
+    reservation = Reservation.new(
+      status: reservation_status.sample,
+      horse: horse,
+      start_time: Faker::Date.forward(days: 23),
+      timeslot: timeslot.sample
+      )
+    unless reservation.status == "available"
+      reservation.user = user
+    end
+    reservation.save!
+  end
+  puts 'Finished'
 

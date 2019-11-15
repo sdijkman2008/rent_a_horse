@@ -15,6 +15,7 @@ class HorsesController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
   end
 
   # GET

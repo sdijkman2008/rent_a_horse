@@ -8,12 +8,13 @@ Rails.application.routes.draw do
     end
 
     resources :horses, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-      resources :reservations, only: [:new, :create]
+      resources :reservations, only: [ :create]
     end
 
-    namespace :admin do
-      resources :horses, only: [:index, :new, :create]
-    end
+    # resources :reservations, only: :index
+    # namespace :admin do
+    #   resources :horses, only: [:index, :new, :create]
+    # end
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
