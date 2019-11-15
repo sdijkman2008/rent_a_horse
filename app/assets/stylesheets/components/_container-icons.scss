@@ -1,22 +1,50 @@
-  ul.list-inline {
-  padding-left: 0;
-  list-style: none;
-   position: absolute;
-    bottom: 1%;
-    left: 50%;
-  }
+.footer {
+  // background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0px 50px;
+  // color: rgba(0,0,0,0.3);
+  // opacity: 0.2;
+  margin-top: 300px;
+  justify-content: center;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  color: #333333;
+  padding-right: 10px;
+}
 
-  li {
-    display: inline-block;
-    padding: 5px;
-  }
 
-  i {
-  color: white;
-  width: 30px;
-  height: 30px;
-  }
-
-  a:hover {
+.footer-links a {
   color: black;
-  }
+  opacity: 1;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 0.5;
+}
+
+.fab {
+  padding-right: 15px;
+}
+
+.form-signup {
+  width: 300px;
+}
+
+.signup-form {
+  margin-top: 30px !important;
+}
+
+.footer-login {
+  margin-top: 100px;
+}
+
+.footer-signup {
+  margin-top: 0px;
+}

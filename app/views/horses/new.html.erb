@@ -1,20 +1,25 @@
 <!-- CvT: this form has to be refactored to be a partial -->
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1>Add a horse</h1>
+<div class="new-horse">
+  <div class="form-box">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 add-horse">
+          <h1>Add a horse</h1>
+          <br>
 
-      <%= simple_form_for @horse do |f| %>
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :level %>
-      <%= f.input :breed %>
-      <%= f.input :description %>
-      <%= f.input :price %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.button :submit, class: 'btn btn-light' %>
-      <% end %>
+          <%= simple_form_for @horse do |f| %>
+          <%= f.input :name %>
+          <%= f.input :address %>
+          <%= f.input :level %>
+          <%= f.input :breed %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, class: 'btn btn-light btn-create-horse' %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
