@@ -1,6 +1,3 @@
-<!-- <div class="container-horse">
-  <div class="card-horse-show">
-    <div id="something"> -->
 
 <body id="bg-showpage">
   <div id="container-horse">
@@ -69,5 +66,20 @@
       </div>
     </div>
   </div>
+</div>
+  
+  <!-- CvT: this is my Mapbox code! -->
+<div class="container-horse">
+  <div
+    id="map"
+    style="width: 100%;
+    height: 300px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+
+<div class="container-horse">
+  <br>
 </div>
 </body>
