@@ -99,14 +99,14 @@ puts 'Creating 3 fake horses for Daphnee...'
   reservation_status = ["available", "booked"]
   timeslot = ["9-11am", "13-15am", "16-18am"]
 
-  puts 'Creating 10 fake reservations'
+  puts 'Creating 25 fake reservations'
   25.times do |index|
     horse = Horse.all.sample
     user = User.all.sample
     reservation = Reservation.new(
       status: reservation_status.sample,
       horse: horse,
-      start_time: Faker::Date.forward(days: 23),
+      date_available: Faker::Date.forward(days: 23),
       timeslot: timeslot.sample
       )
     unless reservation.status == "available"

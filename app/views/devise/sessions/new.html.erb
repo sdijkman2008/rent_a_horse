@@ -1,8 +1,10 @@
-<div class="devise-form-container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-6" style="margin-top: 15px">
-      <body class="bg">
+<body class="bg">
+  <div class="devise-form-container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6" style="margin-top: 15px">
+
         <h2>Log in</h2>
+        <br>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
@@ -20,7 +22,16 @@
         </button>
         <% end %>
         <p style="margin-top: 20px"><%= render "devise/shared/links" %></p>
-      </body>
+
+
+      </div>
     </div>
   </div>
-</div>
+  <div class="footer footer-login">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</body>

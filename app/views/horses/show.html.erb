@@ -35,40 +35,45 @@
 
     <div class="row">
       <div class="booking-form">
-        <form>
+        <%= simple_form_for [@horse, @reservation] do |f| %>
           <div class="row no-margin">
-            <div class="col-md-2">
-              <div class="form-group">
-                <input class="form-control" type="date" required>
-                <span class="form-label">Select date</span>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span><%= f.input :date_available %></span>
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <div class="form-group">
+                    <span><%= f.input :timeslot, as: :select, collection: [['9-11AM'], ['13-15PM'], ['16-18PM']] %></span>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <span><%= f.input :status,  default: 'available' %></span>
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <div class="form-group">
+                    <span><%= f.button :submit, class: 'btn btn-light' %></span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-2">
-              <div class="form-group">
-                <span class="form-label">Timeslot</span>
-                <select class="form-control">
-                  <option>9-11AM</option>
-                  <option>12-15PM</option>
-                  <option>16-18PM</option>
-                </select>
-                <span class="select-arrow">
-                </span>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input class="form-control" type="text">
-                <span class="form-label">Additional comment</span>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="form-btn">
-                <button class="btn btn-light">Book now</button>
-              </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="container">
+      <% @horse.reservations.each do |reservation| %>
+        <div class="row">
+          <div class= "card">
+            <div class="card-text">
+              <%= reservation.date_available %>
+              <%= reservation.timeslot %>
+              <%= reservation.status %>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
