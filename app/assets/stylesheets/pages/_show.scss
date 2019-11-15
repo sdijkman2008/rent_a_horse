@@ -1,10 +1,12 @@
 // Show Horse per id
-.container-horse {
+#container-horse {
   display: flex;
   padding-top: 20px;
   padding-right: 20px;
   padding-left: 20px;
-
+}
+body #bg-showpage {
+  background-image: url("https://res.cloudinary.com/a1986/image/upload/v1573753583/Fields1_uauphn.png");
 }
 
 .card-horse-show {
@@ -21,6 +23,7 @@
 #something {
   display: flex;
   justify-content: space-around;
+
 }
 
 .card-horse-show img {
@@ -42,4 +45,133 @@
   margin-top: 8px;
 }
 
+.section .section-center {
+    padding: 10px;
+    position: absolute;
+    // top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 
+.booking-form {
+  background: white;
+  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.3);
+  // max-width: 642px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  padding-top: 25px;
+  color: #ddbda8;
+  margin-top: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.booking-form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.booking-form .form-control {
+  background-color: #fff;
+  height: 55px;
+  padding: 0px;
+  padding-top: 15px;
+  color: #181818;
+  font-size: 16px;
+  font-weight: 700;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.booking-form .form-control::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.booking-form .form-group:not(.input-not-empty) .form-control:not(:focus) {
+  color: transparent;
+}
+
+.booking-form select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+  position: absolute;
+  right: 0px;
+  bottom: 7px;
+  width: 32px;
+  line-height: 32px;
+  height: 32px;
+  text-align: center;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+  content: '\279C';
+  display: block;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  text-transform: uppercase;
+  line-height: 24px;
+  height: 23px;
+  font-size: 16px;
+  pointer-events: none;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.booking-form .form-group .form-control:focus+.form-label {
+  top: 0px;
+  color: #377ffb;
+  font-size: 14px;
+}
+
+.booking-form .form-group .form-label {
+  top: 0px;
+  color: #377ffb;
+  font-size: 14px;
+}
+
+.booking-form .submit-btn {
+  // color: white;
+  // background-color: #377ffb;
+  // font-weight: 700;
+  // height: 55px;
+  // padding: 10px 35px;
+  // font-size: 18px;
+  // border: none;
+  // display: block;
+  width: 100%!important;
+}

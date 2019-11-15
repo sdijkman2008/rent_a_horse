@@ -11,11 +11,16 @@ class HorsesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { horse: horse }),
         image_url: helpers.asset_url('Horse-marker.png') # MARKERS ARE NOT LOADED
       }
+    if params[:query].present?
+      sql_query = "address ILIKE :query"
+      @horses = Horse.where(sql_query, query: "%#{params[:query]}%")
+    end
     end
   end
 
   # fix to only show THIS horse
   def show
+    @reservation = Reservation.new
     @horse = Horse.find(params[:id])
     # policy_scope(Horse).order(:name)
     @markers = [
