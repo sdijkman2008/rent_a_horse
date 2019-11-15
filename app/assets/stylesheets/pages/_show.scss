@@ -64,7 +64,7 @@ body #bg-showpage {
   margin: auto;
   padding: 20px;
   padding-top: 25px;
-  color: #ddbda8;
+  color: #167FFB;
   margin-top: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -104,17 +104,17 @@ body #bg-showpage {
 }
 
 .booking-form input[type="date"].form-control:invalid {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(50, 50, 50, 0.2);
 }
 
 .booking-form .form-group:not(.input-not-empty) .form-control:not(:focus) {
-  color: transparent;
+  color: black;
 }
 
 .booking-form select.form-control {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // appearance: none;
 }
 
 .booking-form select.form-control+.select-arrow {
@@ -175,3 +175,8 @@ body #bg-showpage {
   // display: block;
   width: 100%!important;
 }
+
+// .simple_form_for {
+//   height: 70px!important;
+//   display: flex;
+// }

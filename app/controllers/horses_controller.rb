@@ -26,6 +26,8 @@ class HorsesController < ApplicationController
   def new
     @horse = Horse.new
     authorize @horse
+    @reservation = Reservation.new
+    # authorize @reservation
   end
 
   # POST
