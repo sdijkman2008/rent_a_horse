@@ -2,9 +2,14 @@
   <div class="card-horse-show">
     <div id="something">
 
-      <div id="pic">
-        <%= cl_image_tag @horse.photo, height: 400, width: 300, crop: :limit, class: 'card-img-bottom' %>
-      </div>
+<body>
+  <div id="container-horse">
+    <div class="card-horse-show">
+      <div id="something">
+
+        <div id="pic">
+          <%= cl_image_tag @horse.photo, height: 250, width: 220, crop: :limit, class: 'card-img-bottom' %>
+        </div>
 
       <div id="text">
         <h3 class="font-weight-bold my-4 pb-2 text-center dark-grey-text">Horse's name: <%= @horse.name %></h3>
@@ -18,7 +23,7 @@
 
 
       <div>
-        <%= link_to "Back to Horses", horses_path, class: "btn btn-primary btn-lg text-center btn-rounded my-4 waves-effect" %>
+        <%= link_to "Back to Horses", horses_path, class: "btn btn-primary btn-lg text-center btn-rounded my-4" %>
       </div>
     </div>
   </div>
@@ -65,3 +70,4 @@
     </div>
   </div>
 </div>
+</body>

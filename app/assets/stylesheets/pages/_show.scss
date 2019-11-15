@@ -1,9 +1,11 @@
 // Show Horse per id
-.container-horse {
+#container-horse {
   display: flex;
   padding-top: 20px;
   padding-right: 20px;
   padding-left: 20px;
+  background-image: url("https://res.cloudinary.com/a1986/image/upload/v1573753583/Fields1_uauphn.png");
+
 }
 
 .card-horse-show {
@@ -20,6 +22,7 @@
 #something {
   display: flex;
   justify-content: space-around;
+
 }
 
 .card-horse-show img {

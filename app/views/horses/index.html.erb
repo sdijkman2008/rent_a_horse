@@ -1,8 +1,25 @@
-<div class="col-container">
-  <div class="row justify-content-center" style="margin-bottom: 15px">
-    <h3 style="padding-right: 2.0rem">Horses</h3>
-    <div class="text-center">
-      <%= link_to "Add a horse", new_horse_path, class: "btn btn-primary btn-lg" %>
+<div class="big-container-index">
+  <!-- <img src="background.jpg"> -->
+  <div class="col-container">
+
+    <%= form_tag horses_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control string required",
+        type: "text",
+        placeholder: "Find a horse"
+        %>
+        <%= submit_tag "Search", class: "btn btn-light" %>
+        <% end %>
+      </div>
+
+      <div class="title-horses">
+        <!-- <h3 style="padding-right: 2.0rem">Horses</h3> -->
+      </div>
+      <div class="text-center" style="padding-right: 2.4rem">
+        <%= link_to "Add a horse", new_horse_path, class: "btn btn-flat btn-lg btn-index" %>
+      </div>
     </div>
   </div>
 
@@ -32,13 +49,11 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-  </div>
 </div>
-
 

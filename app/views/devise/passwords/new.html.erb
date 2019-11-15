@@ -1,26 +1,28 @@
-<div class="devise-form-container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-6">
-      <body class="bg">
-        <h2>Forgot your password?</h2>
+<body>
+  <div class="devise-form-container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6">
+        <body class="bg">
+          <h2>Forgot your password?</h2>
 
-        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-            <%= f.error_notification %>
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= f.error_notification %>
 
           <div class="form-inputs">
             <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+            required: true,
+            autofocus: true,
+            input_html: { autocomplete: "email" } %>
           </div>
 
           <button class="form-actions">
             <%= f.button :submit, "Send me reset password instructions" %>
           </button>
-        <% end %>
+          <% end %>
 
-        <p><%= render "devise/shared/links" %></p>
-      </body>
+          <p><%= render "devise/shared/links" %></p>
+        </body>
+      </div>
     </div>
   </div>
-</div>
+</body>
