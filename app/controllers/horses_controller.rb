@@ -8,13 +8,24 @@ class HorsesController < ApplicationController
       {
         lat: horse.latitude,
         lng: horse.longitude,
-        # infoWindow: render_to_string(partial: "infowindow", locals: { horse: horse }),
-        image_url: helpers.asset_url('Horse-marker.png')
+        infoWindow: render_to_string(partial: "info_window", locals: { horse: horse }),
+        image_url: helpers.asset_url('Horse-marker.png') # MARKERS ARE NOT LOADED
       }
     end
   end
 
+  # fix to only show THIS horse
   def show
+    @horse = Horse.find(params[:id])
+    # policy_scope(Horse).order(:name)
+    @markers = [
+      {
+        lat: @horse.latitude,
+        lng: @horse.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { horse: @horse }),
+        image_url: helpers.asset_url('Horse-marker.png') # MARKERS ARE NOT LOADED
+      }
+    ]
   end
 
   # GET
